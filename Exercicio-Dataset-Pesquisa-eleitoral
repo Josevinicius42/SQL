@@ -38,7 +38,22 @@ FROM
 ORDER BY
    ano DESC
 
-5) #traga o maior valor e o menor valor da coluna ano
+5) #Retorne o maior valor e o menor valor da coluna ano
 SELECT MAX(ano) FROM `basedosdados.br_poder360_pesquisas.microdados`;
 SELECT MIN(ano) FROM `basedosdados.br_poder360_pesquisas.microdados`;
+
+6) #Calcular a média da coluna ano
+SELECT AVG(ano) FROM `basedosdados.br_poder360_pesquisas.microdados`;
+
+7) Combine duas tabelas pela coluna ano
+SELECT 
+  t1.ano AS ano_poder360,
+  t2.ano AS ano_cnpq
+FROM 
+  `basedosdados.br_poder360_pesquisas.microdados` AS t1
+INNER JOIN 
+  `basedosdados.br_cnpq_bolsas.microdados` AS t2 
+ON 
+  t1.ano = t2.ano;
+
 
