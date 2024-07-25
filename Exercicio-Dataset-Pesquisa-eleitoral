@@ -1,0 +1,44 @@
+1) #Selecione os primeiras 1000 dados
+SELECT
+  *
+FROM
+  `basedosdados.br_poder360_pesquisas.microdados`
+LIMIT
+  1000
+
+*2) #Selecione as colunas definidas, na base selecionada e o ano de 2006 ou 2010*
+SELECT
+  ano,
+  cargo,
+  instituto
+FROM
+  `basedosdados.br_poder360_pesquisas.microdados`
+WHERE
+  ano = 2006
+  OR ano = 2010
+
+*3)#Selecione as colunas definidas, na base selecionada e o ano de 2006 e 2010*
+SELECT
+  ano,
+  cargo,
+  instituto
+FROM
+  `basedosdados.br_poder360_pesquisas.microdados`
+WHERE
+  ano = 2006
+  OR ano = 2010
+
+4) #Selecione as colunas definidas, na base selecionada e o ano do maior para o menor*
+SELECT
+  ano,
+  cargo,
+  instituto
+FROM
+  `basedosdados.br_poder360_pesquisas.microdados`
+ORDER BY
+   ano DESC
+
+5) #traga o maior valor e o menor valor da coluna ano
+SELECT MAX(ano) FROM `basedosdados.br_poder360_pesquisas.microdados`;
+SELECT MIN(ano) FROM `basedosdados.br_poder360_pesquisas.microdados`;
+
